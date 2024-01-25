@@ -4,9 +4,6 @@
 GLUquadricObj* quadratic = gluNewQuadric();
 GLfloat vertices[][3] = { {1,0,1},{-1,0,1},{-1,0,-1},{1,0,-1},{0,0.5,0},{-0.17,0,0},{0.17,0,0},{0.22,0.4,0},{-0.22,0.4,0} };
 
-
-
-
 void surface4(int v1, int v2, int v3, int v4) {
 	glBegin(GL_POLYGON);
 	glVertex3fv(vertices[v1]);
