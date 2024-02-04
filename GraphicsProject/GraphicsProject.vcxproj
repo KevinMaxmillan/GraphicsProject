@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClInclude Include="lamppost.h" />
     <ClInclude Include="tank.h" />
+    <ClInclude Include="tree1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

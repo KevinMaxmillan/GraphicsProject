@@ -1,6 +1,8 @@
 #include <gl\glut.h>
 #include "lamppost.h"
 #include "tank.h"
+#include "tree1.h"
+
 GLfloat camX = 0.0; GLfloat camY = 0.0; GLfloat camZ = 0.0;
 GLfloat sceRX = 0.0; GLfloat sceRY = 0.0; GLfloat sceRZ = 0.0;
 GLfloat sceTX = 0.0; GLfloat sceTY = 0.0; GLfloat sceTZ = 0.0;
@@ -14,6 +16,7 @@ void setLighting() {
 	glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_TRUE);
 	glEnable(GL_LIGHTING);
 	glEnable(GL_LIGHT0);
+	glEnable(GL_LIGHT1);
 
 	GLfloat qaAmbientLight[] = { 0.2, 0.2, 0.2, 1.0 };
 	GLfloat qaDiffuseLight[] = { 0.8, 0.8, 0.8, 1.0 };
@@ -22,8 +25,23 @@ void setLighting() {
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, qaDiffuseLight);
 	glLightfv(GL_LIGHT0, GL_SPECULAR, qaSpecularLight);
 
-	GLfloat qaLightPosition[] = { -2.0, 5.1,a, 1.0 };
+	GLfloat qaLightPosition[] = { -4.0, 5,a, 1.0 };
 	glLightfv(GL_LIGHT0, GL_POSITION, qaLightPosition);
+
+	glLightfv(GL_LIGHT1, GL_AMBIENT, qaAmbientLight);
+	glLightfv(GL_LIGHT1, GL_DIFFUSE, qaDiffuseLight);
+	glLightfv(GL_LIGHT1, GL_SPECULAR, qaSpecularLight);
+
+	GLfloat qaLightPosition1[] = { 4.0, 5,a, 1.0 };
+	glLightfv(GL_LIGHT1, GL_POSITION, qaLightPosition1);
+
+	GLfloat SpecRef[] = { 0.7,0.7,0.7,1.0 };
+	GLint Shine = 128;
+	glShadeModel(GL_SMOOTH);
+	glEnable(GL_COLOR_MATERIAL);
+	glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
+	glMaterialfv(GL_FRONT, GL_SPECULAR, SpecRef);
+	glMateriali(GL_FRONT, GL_SHININESS, Shine);
 
 }
 void drawGrid() {
@@ -53,6 +71,13 @@ void drawAxes() {
 	glVertex3f(0, 0, 200);
 	glEnd();
 }
+
+void Movingtank() {
+
+	glTranslatef(objTX, objTY, objTZ);
+	glRotatef(objRY, 0.0, 1.0, 0.0);
+	Tank();
+}
 void init(void) {
 	glClearColor(0.0, 0.0, 0.0, 1.0);
 	glClearDepth(1.0);
@@ -73,7 +98,11 @@ void display(void) {
 	drawGrid();
 	drawAxes();
 	//LampPost();
-	Tank();
+	tree();
+
+	//Movingtank();
+
+	
 	glPopMatrix();
 
 	glutSwapBuffers();
@@ -106,11 +135,23 @@ void keyboard(unsigned char key, int x, int y) {
 		sceTZ += 1;
 	if (key == 'z')
 		sceTZ -= 1;
+
 	if (key == 'w')
-		sceTX += 1;
+
+		objTX -= 0.1;
 
 	if (key == 's')
-		sceTX -= 1;
+		objTX += 0.1;
+
+	if (key == 'a')
+
+		objRY -= 1;
+
+	if (key == 'd')
+		objRY += 1;
+
+
+
 	if (key == 'y')
 		sceRY += 1;
 	if (key == 'Y')
