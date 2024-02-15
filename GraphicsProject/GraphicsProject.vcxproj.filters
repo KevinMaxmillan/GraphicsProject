@@ -29,5 +29,17 @@
     <ClInclude Include="tree1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="bench.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="floor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="building1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="building2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,6 +2,10 @@
 #include "lamppost.h"
 #include "tank.h"
 #include "tree1.h"
+#include "bench.h"
+#include "building1.h"
+#include "floor.h"
+
 
 GLfloat camX = 0.0; GLfloat camY = 0.0; GLfloat camZ = 0.0;
 GLfloat sceRX = 0.0; GLfloat sceRY = 0.0; GLfloat sceRZ = 0.0;
@@ -44,19 +48,7 @@ void setLighting() {
 	glMateriali(GL_FRONT, GL_SHININESS, Shine);
 
 }
-void drawGrid() {
 
-	GLfloat step = 1.0f;
-	GLint line;
-	glBegin(GL_LINES);
-	for (line = -20; line <= 20; line += step) {
-		glVertex3f(line, -0.4, 20);
-		glVertex3f(line, -0.4, -20);
-		glVertex3f(20, -0.4, line);
-		glVertex3f(-20, -0.4, line);
-	}
-	glEnd();
-}
 void drawAxes() {
 	glBegin(GL_LINES);
 	glLineWidth(1.5);
@@ -73,7 +65,7 @@ void drawAxes() {
 }
 
 void Movingtank() {
-
+	glTranslatef(0, 0.5, 0);
 	glTranslatef(objTX, objTY, objTZ);
 	glRotatef(objRY, 0.0, 1.0, 0.0);
 	Tank();
@@ -81,7 +73,10 @@ void Movingtank() {
 void init(void) {
 	glClearColor(0.0, 0.0, 0.0, 1.0);
 	glClearDepth(1.0);
+	
 	glEnable(GL_DEPTH_TEST);
+	
+
 }
 void display(void) {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -90,18 +85,25 @@ void display(void) {
 	setLighting();
 
 	glPushMatrix();
-	gluLookAt(0.0, 5.0 + camY, 5.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+	gluLookAt(0.0, 10.0 + camY, 15.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 	glTranslatef(sceTX, sceTY, sceTZ);
 	glRotatef(sceRY, 0.0, 1.0, 0.0);
 	glColor3f(1, 1, 1);
 
-	drawGrid();
+	building1();
 	drawAxes();
-	//LampPost();
-	tree();
+	LampPost();
+	//tree();
+	street();
+	//bench();
 
-	//Movingtank();
 
+	
+
+	Movingtank();
+
+	
+	
 	
 	glPopMatrix();
 
@@ -138,10 +140,10 @@ void keyboard(unsigned char key, int x, int y) {
 
 	if (key == 'w')
 
-		objTX -= 0.1;
+		objTX -= 0.5;
 
 	if (key == 's')
-		objTX += 0.1;
+		objTX += 0.5;
 
 	if (key == 'a')
 
@@ -153,9 +155,9 @@ void keyboard(unsigned char key, int x, int y) {
 
 
 	if (key == 'y')
-		sceRY += 1;
+		sceRY += 2;
 	if (key == 'Y')
-		sceRY -= 1;
+		sceRY -= 2;
 	glutPostRedisplay();
 }
 void main(int) {

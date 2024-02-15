@@ -133,6 +133,10 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bench.h" />
+    <ClInclude Include="building1.h" />
+    <ClInclude Include="building2.h" />
+    <ClInclude Include="floor.h" />
     <ClInclude Include="lamppost.h" />
     <ClInclude Include="tank.h" />
     <ClInclude Include="tree1.h" />

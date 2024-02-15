@@ -20,20 +20,11 @@ void surface3(int v1, int v2, int v3) {
 	glEnd();
 }
 void LampPost() {
-	GLfloat qaGrey[] = { 0.2, 0.2, 0.2, 1.0 };
-	GLfloat qaGreen[] = { 0.0, 1.0, 0.0, 1.0 };
-	GLfloat qaYellow[] = { 1.0, 1.0, 0.0, 0.6 };
-	GLfloat qaWhite[] = { 1.0, 1.0, 1.0, 1.0 };
-	GLfloat qaLowAmbient[] = { 0.2, 0.2, 0.2, 1.0 };
-	GLfloat qaFullAmbient[] = { 1.0, 1.0, 1.0, 1.0 };
-
+	
 	//footer
 	glPushMatrix();
-	glMaterialfv(GL_FRONT, GL_AMBIENT, qaWhite);
-	glMaterialfv(GL_FRONT, GL_DIFFUSE, qaWhite);
-	glMaterialfv(GL_FRONT, GL_SPECULAR, qaWhite);
-	glMaterialf(GL_FRONT, GL_SHININESS, 128.0);
-	glLightfv(GL_LIGHT0, GL_AMBIENT, qaLowAmbient);
+	glScalef(1.5, 1.5, 1.5);
+	glColor3f(1, 1, 1);
 
 	glPushMatrix();
 	glTranslatef(0, 0, 0);
@@ -69,11 +60,8 @@ void LampPost() {
 
 	//pole
 	glPushMatrix();
-	glMaterialfv(GL_FRONT, GL_AMBIENT, qaGrey);
-	glMaterialfv(GL_FRONT, GL_DIFFUSE, qaGrey);
-	glMaterialfv(GL_FRONT, GL_SPECULAR, qaWhite);
-	glMaterialf(GL_FRONT, GL_SHININESS, 128.0);
-	glLightfv(GL_LIGHT0, GL_AMBIENT, qaLowAmbient);
+	glScalef(1.5, 1.5, 1.5);
+	glColor3f(0.2, 0.2, 0.2);
 
 	glPushMatrix();
 	glTranslatef(0, 5, 0);
@@ -91,11 +79,8 @@ void LampPost() {
 
 	//light post
 	glPushMatrix();
-	glMaterialfv(GL_FRONT, GL_AMBIENT, qaWhite);
-	glMaterialfv(GL_FRONT, GL_DIFFUSE, qaWhite);
-	glMaterialfv(GL_FRONT, GL_SPECULAR, qaWhite);
-	glMaterialf(GL_FRONT, GL_SHININESS, 128.0);
-	glLightfv(GL_LIGHT0, GL_AMBIENT, qaLowAmbient);
+	glScalef(1.5, 1.5, 1.5);
+	glColor3f(1, 1, 1);
 
 	glPushMatrix();
 	glTranslatef(0.2, 5.2, -0.2);
@@ -130,11 +115,8 @@ void LampPost() {
 	glPopMatrix();
 
 	glPushMatrix();
-	glMaterialfv(GL_FRONT, GL_AMBIENT, qaWhite);
-	glMaterialfv(GL_FRONT, GL_DIFFUSE, qaWhite);
-	glMaterialfv(GL_FRONT, GL_SPECULAR, qaWhite);
-	glMaterialf(GL_FRONT, GL_SHININESS, 128.0);
-	glLightfv(GL_LIGHT0, GL_AMBIENT, qaLowAmbient);
+	glScalef(1.5, 1.5, 1.5);
+	glColor3f(1, 1, 1);
 	glTranslatef(0, 5.35, 0);
 	glScalef(0.35, 0.35, 0.35);
 	surface3(0, 1, 4);
@@ -145,12 +127,9 @@ void LampPost() {
 
 	//glasses
 	glPushMatrix();
+	glScalef(1.5, 1.5, 1.5);
 	glEnable(GL_BLEND);
-	glMaterialfv(GL_FRONT, GL_AMBIENT, qaYellow);
-	glMaterialfv(GL_FRONT, GL_DIFFUSE, qaYellow);
-	glMaterialfv(GL_FRONT, GL_SPECULAR, qaWhite);
-	glMaterialf(GL_FRONT, GL_SHININESS, 128.0);
-	glLightfv(GL_LIGHT0, GL_AMBIENT, qaLowAmbient);
+	glColor3f(1, 1, 0);
 
 	glPushMatrix();
 	glTranslatef(0, 5, -0.18);

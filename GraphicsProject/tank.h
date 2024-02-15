@@ -3,7 +3,6 @@
 #include <math.h>
 
 GLUquadricObj* quadratic1 = gluNewQuadric();
-//GLfloat vertices[][3] = { {1,0,1},{-1,0,1},{-1,0,-1},{1,0,-1},{0,0.5,0},{-0.17,0,0},{0.17,0,0},{0.22,0.4,0},{-0.22,0.4,0} };
 float pi = 3.14;
 
 
@@ -25,21 +24,7 @@ void Partialcylinder(float radius, float height, float angle, float slices) {
 	
 }
 
-//void surface4(int v1, int v2, int v3, int v4) {
-//	glBegin(GL_POLYGON);
-//	glVertex3fv(vertices[v1]);
-//	glVertex3fv(vertices[v2]);
-//	glVertex3fv(vertices[v3]);
-//	glVertex3fv(vertices[v4]);
-//	glEnd();
-//}
-//void surface3(int v1, int v2, int v3) {
-//	glBegin(GL_POLYGON);
-//	glVertex3fv(vertices[v1]);
-//	glVertex3fv(vertices[v2]);
-//	glVertex3fv(vertices[v3]);
-//	glEnd();
-//}
+
 void drawDisk(double radius, int n) {
 	
 	double angle = 0;
@@ -790,7 +775,7 @@ void TankTire() {
 }
 void Tank() {
 	
-
+	
 	TankWeapon();
 	glTranslatef(-4.5, -4.1, 2.5);
 	TankTire();
