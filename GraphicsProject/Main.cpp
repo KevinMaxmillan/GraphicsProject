@@ -5,7 +5,12 @@
 #include "bench.h"
 #include "building1.h"
 #include "floor.h"
-
+#include "building2.h"
+#include "building3.h"
+#include "building4.h"
+#include "fence.h"
+#include "barrels.h"
+#include "wreckedobjects.h"
 
 GLfloat camX = 0.0; GLfloat camY = 0.0; GLfloat camZ = 0.0;
 GLfloat sceRX = 0.0; GLfloat sceRY = 0.0; GLfloat sceRZ = 0.0;
@@ -49,20 +54,7 @@ void setLighting() {
 
 }
 
-void drawAxes() {
-	glBegin(GL_LINES);
-	glLineWidth(1.5);
-	glColor3f(1.0, 0.0, 0.0);
-	glVertex3f(-200, 0, 0);
-	glVertex3f(200, 0, 0);
-	glColor3f(0.0, 1.0, 0.0);
-	glVertex3f(0, -200, 0);
-	glVertex3f(0, 200, 0);
-	glColor3f(0.0, 0.0, 1.0);
-	glVertex3f(0, 0, -200);
-	glVertex3f(0, 0, 200);
-	glEnd();
-}
+
 
 void Movingtank() {
 	glTranslatef(0, 0.5, 0);
@@ -71,7 +63,7 @@ void Movingtank() {
 	Tank();
 }
 void init(void) {
-	glClearColor(0.0, 0.0, 0.0, 1.0);
+	glClearColor(0.0, 0, 0, 1.0);
 	glClearDepth(1.0);
 	
 	glEnable(GL_DEPTH_TEST);
@@ -85,21 +77,20 @@ void display(void) {
 	setLighting();
 
 	glPushMatrix();
-	gluLookAt(0.0, 10.0 + camY, 15.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+	gluLookAt(0.0, 30.0 + camY, 45.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 	glTranslatef(sceTX, sceTY, sceTZ);
 	glRotatef(sceRY, 0.0, 1.0, 0.0);
-	glColor3f(1, 1, 1);
-
-	building1();
-	drawAxes();
-	LampPost();
-	//tree();
-	street();
-	//bench();
-
-
 	
 
+	building1();
+	building2();
+	building3();
+	building4();
+	fenceplacement();
+	lamppostplacement();
+	street();
+	wreckagepositioning();
+	barrelPositioning();
 	Movingtank();
 
 	
@@ -140,29 +131,29 @@ void keyboard(unsigned char key, int x, int y) {
 
 	if (key == 'w')
 
-		objTX -= 0.5;
+		objTX -= 1;
 
 	if (key == 's')
-		objTX += 0.5;
+		objTX += 1;
 
 	if (key == 'a')
 
-		objRY -= 1;
+		objRY -= 2;
 
 	if (key == 'd')
-		objRY += 1;
+		objRY += 2;
 
 
 
 	if (key == 'y')
-		sceRY += 2;
+		sceRY += 3;
 	if (key == 'Y')
-		sceRY -= 2;
+		sceRY -= 3;
 	glutPostRedisplay();
 }
 void main(int) {
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-	glutInitWindowSize(400, 400);
+	glutInitWindowSize(1080, 1080);
 	glutInitWindowPosition(0, 0);
 	glutCreateWindow("Complex 3D Shapes");
 	glutKeyboardFunc(keyboard);

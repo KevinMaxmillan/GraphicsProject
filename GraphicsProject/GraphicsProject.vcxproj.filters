@@ -41,5 +41,20 @@
     <ClInclude Include="building2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="building3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="building4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fence.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="wreckedobjects.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="barrels.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

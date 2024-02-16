@@ -133,13 +133,18 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="barrels.h" />
     <ClInclude Include="bench.h" />
     <ClInclude Include="building1.h" />
     <ClInclude Include="building2.h" />
+    <ClInclude Include="building3.h" />
+    <ClInclude Include="building4.h" />
+    <ClInclude Include="fence.h" />
     <ClInclude Include="floor.h" />
     <ClInclude Include="lamppost.h" />
     <ClInclude Include="tank.h" />
     <ClInclude Include="tree1.h" />
+    <ClInclude Include="wreckedobjects.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -57,6 +57,18 @@ void windowloop() {
 
     for (int x = 0; x < 3; x++) {
         for (int y = 0; y < 3; y++) {
+          
+                glPushMatrix();
+                glColor3f(0.1, 0.1, 0.1);
+                glTranslatef(32 + (x * 7), 4 + (y * 7), -49.7);
+                window();
+                glPopMatrix();
+            
+        }
+    }
+
+    for (int x = 0; x < 3; x++) {
+        for (int y = 0; y < 3; y++) {
             if (!(x == 0 && y == 2)) {
                 glPushMatrix();
                 glColor3f(0.1, 0.1, 0.1);
@@ -79,7 +91,7 @@ void walls() {
     for (int i = 0; i < 20; i++) {
         int height = wallPattern1[i];
         glPushMatrix();
-        glColor3f(0.35, 0.35, 0.35);
+        glColor3f(0.62, 0.77, 0.66);
         glTranslatef(i + 20, height - i, 0 - 20); 
         glScalef(1, height, 0.5);
         glutSolidCube(1);
@@ -89,7 +101,7 @@ void walls() {
     for (int i = 0; i < 20; i++) {
         int height = wallPattern2[i];
         glPushMatrix();
-        glColor3f(0.35, 0.35, 0.35);
+        glColor3f(0.62, 0.77, 0.66);
         glTranslatef(0 + 20, height - i, -i - 20); 
         glScalef(0.5, height, 1);
         glutSolidCube(1);
@@ -99,7 +111,7 @@ void walls() {
     for (int i = 0; i < 14; i++) {
         int height = wallPattern2[i];
         glPushMatrix();
-        glColor3f(0.35, 0.35, 0.35);
+        glColor3f(0.62, 0.77, 0.66);
         glTranslatef(height + 20, 20.5, i - 14 - 20);
         glScalef(height, 0.5, 1);
         glutSolidCube(1);
@@ -109,7 +121,7 @@ void walls() {
     for (int i = 0; i < 14; i++) {
         int height = wallPattern2[i];
         glPushMatrix();
-        glColor3f(0.35, 0.35, 0.35);
+        glColor3f(0.62, 0.77, 0.66);
         glTranslatef(-height + 32.5 + 20, 20.5, -i - 15.5 - 20); 
         glScalef(height, 0.5, 1);
         glutSolidCube(1);
@@ -118,7 +130,7 @@ void walls() {
 
 
     glPushMatrix();
-    glColor3f(0.35, 0.35, 0.35);
+    glColor3f(0.62, 0.77, 0.66);
     glTranslatef(47, 20.5, -43);
     glScalef(10, 0.5, 12);
     glutSolidCube(1);
@@ -126,7 +138,7 @@ void walls() {
 
 
     glPushMatrix();
-    glColor3f(0.35, 0.35, 0.35);
+    glColor3f(0.62, 0.77, 0.66);
     glTranslatef(45, 10.5, -20);
     glScalef(15, 21, 0.5);
     glutSolidCube(1);
@@ -134,14 +146,14 @@ void walls() {
 
 
     glPushMatrix();
-    glColor3f(0.35, 0.35, 0.35);
+    glColor3f(0.62, 0.77, 0.66);
     glTranslatef(20, 10.5, -43);
     glScalef(0.5, 21, 12);
     glutSolidCube(1);
     glPopMatrix();
 
     glPushMatrix();
-    glColor3f(0.35, 0.35, 0.35);
+    glColor3f(0.62, 0.77, 0.66);
     glTranslatef(36.25, 10.5, -49);
     glScalef(32.5, 21, 0.5);
     glutSolidCube(1);
@@ -149,7 +161,7 @@ void walls() {
 
 
     glPushMatrix();
-    glColor3f(0.35, 0.35, 0.35);
+    glColor3f(0.62, 0.77, 0.66);
     glTranslatef(52.5, 10.5, -34.5);
     glScalef(0.5, 21, 29);
     glutSolidCube(1);
@@ -157,14 +169,14 @@ void walls() {
 
   
     glPushMatrix();
-    glColor3f(0.35, 0.35, 0.35);
+    glColor3f(0.62, 0.77, 0.66);
     glTranslatef(36.25, 7, -34.5);
     glScalef(32.5, 0.5, 29);
     glutSolidCube(1);
     glPopMatrix();
 
     glPushMatrix();
-    glColor3f(0.35, 0.35, 0.35);
+    glColor3f(0.62, 0.77, 0.66);
     glTranslatef(36.25, 14, -34.5);
     glScalef(32.5, 0.5, 29);
     glutSolidCube(1);

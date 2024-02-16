@@ -22,7 +22,7 @@ void surface3(int v1, int v2, int v3) {
 void LampPost() {
 	
 	//footer
-	glPushMatrix();
+	
 	glScalef(1.5, 1.5, 1.5);
 	glColor3f(1, 1, 1);
 
@@ -56,11 +56,11 @@ void LampPost() {
 	glutSolidTorus(0.15, 0.2, 100, 250);
 	glPopMatrix();
 
-	glPopMatrix();
+	
 
 	//pole
-	glPushMatrix();
-	glScalef(1.5, 1.5, 1.5);
+
+
 	glColor3f(0.2, 0.2, 0.2);
 
 	glPushMatrix();
@@ -75,11 +75,9 @@ void LampPost() {
 	gluCylinder(quadratic, 0.25, 0.25, 3, 100, 100);
 	glPopMatrix();
 
-	glPopMatrix();
+
 
 	//light post
-	glPushMatrix();
-	glScalef(1.5, 1.5, 1.5);
 	glColor3f(1, 1, 1);
 
 	glPushMatrix();
@@ -112,10 +110,8 @@ void LampPost() {
 	glutSolidCube(1);
 	glPopMatrix();
 
-	glPopMatrix();
 
 	glPushMatrix();
-	glScalef(1.5, 1.5, 1.5);
 	glColor3f(1, 1, 1);
 	glTranslatef(0, 5.35, 0);
 	glScalef(0.35, 0.35, 0.35);
@@ -126,8 +122,7 @@ void LampPost() {
 	glPopMatrix();
 
 	//glasses
-	glPushMatrix();
-	glScalef(1.5, 1.5, 1.5);
+	
 	glEnable(GL_BLEND);
 	glColor3f(1, 1, 0);
 
@@ -158,6 +153,42 @@ void LampPost() {
 	glPopMatrix();
 
 	glDisable(GL_BLEND);
+	
+
+}
+
+void lamppostplacement() {
+
+	for (int x = 0; x < 2; x++) {
+		for (int z = 0; z < 2; z++) {
+
+            glPushMatrix();
+            glTranslatef(-13 + (x * 26), 0, -12 + (z * 24));       
+            LampPost();
+            glPopMatrix();
+        
+		}
+	}
+
+	glPushMatrix();
+	glTranslatef(15,1,-45);
+	glRotatef(30, 0, 1, 0);
+	glRotatef(85, 0, 0, 1);
+	LampPost();
 	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(45, 1, 15);
+	glRotatef(-45, 0, 1, 0);
+	glRotatef(85, 0, 0, 1);
+	LampPost();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(-45, 0, -13);
+	LampPost();
+	glPopMatrix();
+
+
 
 }
