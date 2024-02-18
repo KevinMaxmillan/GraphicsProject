@@ -4,7 +4,8 @@
 
 GLUquadricObj* quadratic1 = gluNewQuadric();
 float pi = 3.14;
-
+float wr = 0;
+float weaponR = 0;
 
 
 void Partialcylinder(float radius, float height, float angle, float slices) {
@@ -23,8 +24,6 @@ void Partialcylinder(float radius, float height, float angle, float slices) {
 	glEnd(); 
 	
 }
-
-
 void drawDisk(double radius, int n) {
 	
 	double angle = 0;
@@ -168,35 +167,42 @@ void TankWeapon() {
 
 	glTranslated(0, 3.7, 0);
 	glColor3f(0.46, 0.32, 0.05);
+
 	glPushMatrix();
+	glRotatef(weaponR, 0, 1, 0);
 	cylinder(2, 1.001);
 	glPopMatrix();
 
 	glPushMatrix();
 	glColor3f(0.46, 0.32, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glTranslatef(1.5, 0, 0);
 	cylinder(1, 0.5);
 	glPopMatrix();
 
 	glPushMatrix();
 	glColor3f(0.46, 0.32, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glScalef(1, 1, 0.9);
 	cylinder(1.8, 1.2);
 	glPopMatrix();
 
 	glPushMatrix();
 	glColor3f(0.46, 0.32, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glTranslatef(0.3, 1.2, 0.4);
 	cylinder(0.8, 0.3);
 	glPopMatrix();
 
 	glPushMatrix();
+	glRotatef(weaponR, 0, 1, 0);
 	glTranslatef(0.3, 1.3, 0.4);
 	cylinder(0.7, 0.3);
 	glPopMatrix();
 
 	glPushMatrix();
 	glColor3f(0.46, 0.32, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glScalef(0.6, 1, 3.2);
 	glTranslatef(-2.2, 0.5, 0);
 	glutSolidCube(1);
@@ -204,6 +210,7 @@ void TankWeapon() {
 
 	glPushMatrix();
 	glColor3f(0.46, 0.32, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glScalef(0.6, 1, 2.5);
 	glTranslatef(-2.6, 0.5, 0);
 	glutSolidCube(1);
@@ -211,6 +218,7 @@ void TankWeapon() {
 
 	glPushMatrix();
 	glColor3f(0.46, 0.32, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glScalef(0.8, 1, 1.5);
 	glTranslatef(-2.2, 0.5, 0);
 	glutSolidCube(1);
@@ -218,6 +226,7 @@ void TankWeapon() {
 
 	glPushMatrix();
 	glColor3f(0.46, 0.32, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glScalef(0.4, 1, 0.3);
 	glTranslatef(-4.45, 0.5, -3.6);
 	glutSolidCube(1);
@@ -225,6 +234,7 @@ void TankWeapon() {
 
 	glPushMatrix();
 	glColor3f(0.46, 0.32, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glScalef(0.4, 1, 0.3);
 	glTranslatef(-4.45, 0.5, 3.6);
 	glutSolidCube(1);
@@ -232,6 +242,7 @@ void TankWeapon() {
 
 	glPushMatrix();
 	glColor3f(0.36, 0.22, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glTranslatef(-2.2, 0.5, 0);
 	glRotatef(-90, 0, 1, 0);
 	glutSolidTorus(0.1, 0.4, 100, 250);
@@ -239,6 +250,7 @@ void TankWeapon() {
 
 	glPushMatrix();
 	glColor3f(0.36, 0.22, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glTranslatef(-3.9, 0.5, 0);
 	glRotatef(-90, 0, 1, 0);
 	glutSolidTorus(0.1, 0.3, 100, 250);
@@ -246,13 +258,16 @@ void TankWeapon() {
 
 	glPushMatrix();
 	glColor3f(0.36, 0.22, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glTranslatef(-5, 0.5, 0);
 	glRotatef(-90, 0, 1, 0);
 	glutSolidTorus(0.1, 0.2, 100, 250);
 	glPopMatrix();
 
+	//weapon
 	glPushMatrix();
 	glColor3f(0.46, 0.32, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glTranslatef(-3.9, 0.5, 0);
 	glRotatef(-90, 0, 0, 1);
 	cylinder(0.4, 2);
@@ -260,6 +275,7 @@ void TankWeapon() {
 
 	glPushMatrix();
 	glColor3f(0.46, 0.32, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glTranslatef(-5, 0.5, 0);
 	glRotatef(-90, 0, 0, 1);
 	cylinder(0.3, 2);
@@ -267,6 +283,7 @@ void TankWeapon() {
 
 	glPushMatrix();
 	glColor3f(0.46, 0.32, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glTranslatef(-4, 0.5, 0);
 	glRotatef(-90, 0, 1, 0);
 	gluCylinder(quadratic, 0.2, 0.2, 5, 100, 100);
@@ -274,30 +291,35 @@ void TankWeapon() {
 
 	glPushMatrix();
 	glColor3f(0.36, 0.22, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glTranslatef(1.8, 0.5, 0.2);
 	glutSolidTorus(0.1, 0.4, 100, 250);
 	glPopMatrix();
 
 	glPushMatrix();
 	glColor3f(0.36, 0.22, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glTranslatef(1.8, 0.5, -0.2);
 	glutSolidTorus(0.1, 0.4, 100, 250);
 	glPopMatrix();
 
 	glPushMatrix();
 	glColor3f(0.36, 0.22, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glTranslatef(1.8, 0.5, 0.45);
 	glutSolidTorus(0.1, 0.4, 100, 250);
 	glPopMatrix();
 
 	glPushMatrix();
 	glColor3f(0.36, 0.22, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glTranslatef(1.8, 0.5, -0.45);
 	glutSolidTorus(0.1, 0.4, 100, 250);
 	glPopMatrix();
 
 	glPushMatrix();
 	glColor3f(0.36, 0.22, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glRotatef(-90, 1, 0, 0);
 	glTranslatef(0.8, 0.8, 1.15);
 	glutSolidTorus(0.1, 0.2, 100, 250);
@@ -305,12 +327,14 @@ void TankWeapon() {
 
 	glPushMatrix();
 	glColor3f(0.36, 0.22, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glTranslatef(0.3, 1.5, 0.6);
 	glutSolidTorus(0.05, 0.2, 100, 250);
 	glPopMatrix();
 
 	glPushMatrix();
 	glColor3f(0.36, 0.22, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glScalef(0.5, 0.2, 0.6);
 	glTranslatef(0, 6, -1.3);
 	glutSolidCube(1);
@@ -318,12 +342,14 @@ void TankWeapon() {
 
 	glPushMatrix();
 	glColor3f(0.36, 0.22, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glTranslatef(-0.3, 1.25, -0.7);
 	glutSolidTorus(0.05, 0.1, 100, 250);
 	glPopMatrix();
 
 	glPushMatrix();
 	glColor3f(0.36, 0.22, 0.05);
+	glRotatef(weaponR, 0, 1, 0);
 	glTranslatef(-0.3, 1.25, -0.9);
 	glutSolidTorus(0.05, 0.1, 100, 250);
 	glPopMatrix();
@@ -659,37 +685,44 @@ void Wheels() {
 	
 	
 	glPushMatrix();
+	
 	glScalef(1.25, 1.25, 1);
 	glTranslatef(0.2, 0.95, 0.15);
+	glRotatef(wr, 0, 0, 1);
 	wheel1();
 	glPopMatrix();
 
 	glPushMatrix();
 	glScalef(1.15, 1.15, 1);
 	glTranslatef(2, 0.9, 0.15);
+	glRotatef(wr, 0, 0, 1);
 	wheel1();
 	glPopMatrix();
 
 	glPushMatrix();
 	glScalef(1.07, 1.07, 1);
 	glTranslatef(3.9, 0.9, 0.15);
+	glRotatef(wr, 0, 0, 1);
 	wheel1();
 	glPopMatrix();
 
 	glPushMatrix();
 	glTranslatef(6, 0.9, 0.15);
+	glRotatef(wr, 0, 0, 1);
 	wheel1();
 	glPopMatrix();
 
 	glPushMatrix();
 	glTranslatef(7.7, 0.87, 0.15);
 	glScalef(0.95, 0.95, 1);
+	glRotatef(wr, 0, 0, 1);
 	wheel1();
 	glPopMatrix();
 
 	glPushMatrix();
 	glTranslatef(9.1, 0.87, 0.15);
 	glScalef(0.65, 0.65, 1);
+	glRotatef(wr, 0, 0, 1);
 	wheel1();
 	glPopMatrix();
 
@@ -775,7 +808,7 @@ void TankTire() {
 }
 void Tank() {
 	
-	
+	glScalef(1.3,1.3,1.3);
 	TankWeapon();
 	glTranslatef(-4.5, -4.1, 2.5);
 	TankTire();

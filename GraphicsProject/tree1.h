@@ -2,28 +2,7 @@
 #include <gl\glut.h>
 #include <math.h>
 
-void bush() {
 
-	
-	glColor3f(0,0.4,0);
-	glPushMatrix();
-	glTranslatef(0, 0.5, 0);
-	glutSolidSphere(1, 250, 250);
-	glPopMatrix();
-
-	glPushMatrix();
-	glTranslatef(0.7, 0.1, 0);
-	glutSolidSphere(0.8, 250, 250);
-	glPopMatrix();
-
-	glPushMatrix();
-	glTranslatef(-0.7, 0, 0);
-	glutSolidSphere(0.8, 250, 250);
-	glPopMatrix();
-
-	
-
-}
 void trunk() {
 
 	glColor3f(0.37, 0.18, 0.05);
@@ -70,50 +49,61 @@ void trunk() {
 
 }
 void bushplacement() {
+	glColor3f(0, 0.4, 0);
 	glPushMatrix();
 	glTranslatef(0,7, 0);
 	glRotatef(-15, 0, 1, 0);
-	bush();
+	glutSolidSphere(1, 250, 250);
 	glPopMatrix();
 
 	glPushMatrix();
 	glTranslatef(0, 5.8, 1.4);
 	glRotatef(45, 0, 1, 0);
 	glScalef(0.6, 0.6, 0.6);
-	bush();
+	glutSolidSphere(1, 250, 250);
 	glPopMatrix();
 
 	glPushMatrix();
 	glTranslatef(0, 6.3, -1.5);
 	glScalef(0.7, 0.7, 0.7);
-	bush();
+	glutSolidSphere(1, 250, 250);
 	glPopMatrix();
 
 	glPushMatrix();
 	glTranslatef(1, 5, 0.5);
 	glScalef(0.4, 0.4, 0.4);
-	bush();
+	glutSolidSphere(1, 250, 250);
 	glPopMatrix();
 
 	glPushMatrix();
 	glTranslatef(-1, 6, 0);
 	glRotatef(-45, 0, 1, 0);
 	glScalef(0.5, 0.5, 0.5);
-	bush();
+	glutSolidSphere(1, 250, 250);
 	glPopMatrix();
 
 	glPushMatrix();
 	glTranslatef(1.3, 6.5, 0);
 	glRotatef(60, 0, 1, 0);
 	glScalef(0.7, 0.7, 0.7);
-	bush();
+	glutSolidSphere(1, 250, 250);
 	glPopMatrix();
 
 }
 void tree() {
 
-
+	glPushMatrix();
+	glTranslatef(20,0,20);
+	glScalef(2, 2, 2);
 	bushplacement();
 	trunk();
+	glPopMatrix();
+
+	glPushMatrix();
+	glTranslatef(35, 0, 20);
+	glScalef(2, 2, 2);
+	bushplacement();
+	trunk();
+	glPopMatrix();
 	
 }

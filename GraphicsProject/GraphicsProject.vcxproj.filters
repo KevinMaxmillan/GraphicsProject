@@ -56,5 +56,8 @@
     <ClInclude Include="barrels.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="soldier.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
